@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView[] imageArray;
     Handler handler;
     Runnable runnable;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,14 +75,10 @@ public class MainActivity extends AppCompatActivity {
                 alert.setTitle("Restart?");
                 alert.setMessage("Are you sure to restart game?");
                 alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    private DialogInterface dialog;
-                    private int which;
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        this.dialog = dialog;
-                        this.which = which;
-                        //restart
+
                     Intent intent = getIntent();
                     finish();
                     startActivity (intent);
